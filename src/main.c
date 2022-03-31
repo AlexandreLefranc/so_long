@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_event.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 14:15:56 by alefranc          #+#    #+#             */
-/*   Updated: 2022/03/30 14:16:38 by alefranc         ###   ########.fr       */
+/*   Created: 2022/03/31 16:44:59 by alefranc          #+#    #+#             */
+/*   Updated: 2022/03/31 20:26:49 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "so_long.h"
 
-typedef struct	s_vars {
-	void	*mlx;
-	void	*win;
-}				t_vars;
-
-int	close(int keycode, t_vars *vars)
+int	main(int argc, char **argv)
 {
-	(void)keycode;
-	mlx_destroy_window(vars->mlx, vars->win);
+	char	**map;
+
+	map = parse_input(argc, argv);
+	check_map(map);
 	return (0);
-}
-
-int	main(void)
-{
-	t_vars	vars;
-
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-	mlx_hook(vars.win, 2, 1L<<0, close, &vars);
-	mlx_loop(vars.mlx);
 }

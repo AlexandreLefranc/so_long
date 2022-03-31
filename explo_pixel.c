@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 14:47:29 by alefranc          #+#    #+#             */
-/*   Updated: 2022/03/30 15:39:49 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:40:48 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,15 @@ int	main(void)
 	t_data	img;
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	img.img = mlx_new_image(mlx, 1920, 1080);
+	mlx_win = mlx_new_window(mlx, 800, 600, "Hello world!");
+	img.img = mlx_new_image(mlx, 800, 600);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
-	my_mlx_square(&img, 500, 500, 0x00FF0000, 100);
+	my_mlx_square(&img, 400, 300, 0x00FF0000, 100);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	sleep(5);
 	mlx_destroy_window(mlx, mlx_win);
+	mlx_destroy_image(mlx, img.img);
 	mlx_destroy_display(mlx);
 	free(mlx);
 }
