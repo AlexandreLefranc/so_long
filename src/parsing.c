@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:46:39 by alefranc          #+#    #+#             */
-/*   Updated: 2022/03/31 19:32:20 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/03/31 23:47:39 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	**parse_input(int argc, char **argv)
 	while (map[i] != NULL)
 	{
 		tmp = map[i];
-		map[i] = ft_strtrim(map[i]);
+		map[i] = ft_strtrim(map[i], "	 ");
 		free(tmp);
 		i++;
 	}
