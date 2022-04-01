@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:24:55 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/01 00:24:10 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:51:14 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,18 @@ void	msg_free_exit(char *msg, char **map, int exit_code)
 {
 	ft_putendl_fd(msg, 2);
 	ft_strtabfree(map);
+	exit(exit_code);
+}
+
+void	msg_free2_exit(char *msg, void	*ptr, int exit_code)
+{
+	ft_putendl_fd(msg, 2);
+	free(ptr);
+	exit(exit_code);
+}
+
+void	msg_exit(char *msg, int exit_code)
+{
+	ft_putendl_fd(msg, 2);
 	exit(exit_code);
 }

@@ -6,7 +6,7 @@
 #    By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:00:23 by alefranc          #+#    #+#              #
-#    Updated: 2022/03/31 23:46:09 by alefranc         ###   ########.fr        #
+#    Updated: 2022/04/01 17:24:42 by alefranc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,9 @@ LIBFTINC_FLAG = -I$(LIBFTDIR)include
 
 SRCDIR = src/
 SRCFILES =	check_map.c \
+			create_sprites.c \
+			create_window.c \
+			display_map.c \
 			error.c \
 			main.c \
 			parsing.c
@@ -76,7 +79,7 @@ INC_MLX = -I ~/minilibx/include/
 all: $(LIBFT_A) $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(INC_FLAG) $(LIBFTINC_FLAG) $(OBJ) $(LIBFT_A) -o $(NAME)
+	$(CC) $(FLAGS) $(INC_FLAG) $(LIBFTINC_FLAG) $(OBJ) $(GMLX) $(LIBFT_A) -o $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(HEADER)
 	@mkdir -p $(OBJDIR)
