@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 14:15:56 by alefranc          #+#    #+#             */
-/*   Updated: 2022/03/31 15:23:31 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/04 17:09:07 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <mlx.h>
 
-typedef struct	s_vars {
+typedef struct s_vars {
 	void	*mlx;
 	void	*win;
 }				t_vars;
@@ -39,7 +39,6 @@ int	close2(t_vars *vars)
 	free(vars->mlx);
 	exit(0);
 }
-
 
 int	main(void)
 {

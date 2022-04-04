@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:42:35 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/01 17:50:48 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/04 17:48:14 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@
 # define COLLECTIBLE_F "./asset/collectible64.xpm"
 # define SPRITE_SIZE 64
 
-typedef struct	s_sprite
+typedef struct s_sprite
 {
 	void	*img;
 	int		width;
 	int		height;
 }	t_sprite;
 
-typedef struct	s_all
+typedef struct s_all
 {
 	char		**map;
 	void		*mlx;
@@ -58,11 +58,14 @@ void	create_sprites(t_all *all);
 // create_window.c
 void	create_window(t_all *all);
 
+// destroy_all.c
+void	destroy_all(t_all *all);
+
 // display_map.c
 void	display_map(t_all *all);
 
 // error.c
-void	print_usage();
+void	print_usage(void);
 void	msg_free_exit(char *msg, char **map, int exit_code);
 void	msg_free2_exit(char *msg, void	*ptr, int exit_code);
 void	msg_exit(char *msg, int exit_code);
