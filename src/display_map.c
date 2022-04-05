@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:16:32 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 14:12:47 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:59:05 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	display_sprite(t_all *all, char c, size_t col, size_t row)
 {
-	// printf("c=%c\n", c);
 	if (c == '1')
 	{
 		mlx_put_image_to_window(all->mlx, all->win, all->wall->img,
@@ -39,10 +38,6 @@ static void	display_sprite(t_all *all, char c, size_t col, size_t row)
 	{
 		mlx_put_image_to_window(all->mlx, all->win, all->collectible->img,
 			col * SPRITE_SIZE, row * SPRITE_SIZE);
-	}
-	else
-	{
-		printf("Unknown sprite\n");
 	}
 }
 

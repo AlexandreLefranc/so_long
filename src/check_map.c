@@ -6,16 +6,16 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 19:05:44 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 14:03:59 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:51:48 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	check_CEP2(char **map, int *c, int *e, int *p)
+static int	check_cep2(char **map, int *c, int *e, int *p)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (map[i] != NULL)
@@ -38,7 +38,7 @@ static int	check_CEP2(char **map, int *c, int *e, int *p)
 	return (0);
 }
 
-static int	check_CEP(t_all *all)
+static int	check_cep(t_all *all)
 {
 	int	collectible;
 	int	exit;
@@ -47,24 +47,11 @@ static int	check_CEP(t_all *all)
 	collectible = 0;
 	exit = 0;
 	player = 0;
-	check_CEP2(all->map, &collectible, &exit, &player);
+	check_cep2(all->map, &collectible, &exit, &player);
 	if (collectible > 0 && exit > 0 && player == 1)
 		return (1);
 	return (0);
 }
-
-// static void	check_first(t_all *all)
-// {
-// 	int	i;
-//
-// 	i = 0;
-// 	while (all->map[0][i] != '\0')
-// 	{
-// 		if (all->map[0][i] != '1')
-// 			destroy_all_msg_exit(all, "Error\nInvalid map", 1);
-// 		i++;
-// 	}
-// }
 
 static void	check_first_middle(t_all *all, int width)
 {
@@ -78,7 +65,7 @@ static void	check_first_middle(t_all *all, int width)
 		i++;
 	}
 	i = 1;
-	while (all->map[i+1] != NULL)
+	while (all->map[i + 1] != NULL)
 	{
 		if (all->map[i][0] != '1' || all->map[i][width - 1] != '1')
 			destroy_all_msg_exit(all, "Error\nInvalid map", 1);
@@ -112,15 +99,13 @@ static void	check_last(t_all *all, int width)
 	}
 }
 
-
 void	check_map(t_all *all)
 {
 	int	width;
 
-	if (check_CEP(all) == 0)
+	if (check_cep(all) == 0)
 		destroy_all_msg_exit(all, "Error\nInvalid map", 1);
 	width = ft_strlen(all->map[0]);
-	// check_first(all);
 	check_first_middle(all, width);
 	check_last(all, width);
 }

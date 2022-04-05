@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:42:35 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 15:01:48 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:37:56 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 # include "libft.h"
 # include "ft_printf.h"
 
-# define WALL_F	"./asset/wall64.xpm"
-# define FLOOR_F "./asset/floor64.xpm"
-# define PLAYER_F "./asset/Alex_grey.xpm"
-# define EXIT_F "./asset/exit64.xpm"
-# define COLLECTIBLE_F "./asset/collectible64.xpm"
+# define WALL_F	"./asset/road.xpm"
+# define FLOOR_F "./asset/grass.xpm"
+# define PLAYER_F "./asset/kitten.xpm"
+# define EXIT_F "./asset/trampoline.xpm"
+# define COLLECTIBLE_F "./asset/poisson.xpm"
 # define SPRITE_SIZE 64
 
 typedef struct s_sprite
@@ -68,9 +68,6 @@ void	display_map(t_all *all);
 
 // error.c
 void	print_usage(t_all *all);
-void	msg_free_exit(char *msg, char **map, int exit_code);
-void	msg_free2_exit(char *msg, void	*ptr, int exit_code);
-void	msg_exit(char *msg, int exit_code);
 
 // hook_utils.c
 int		cross(t_all *all);

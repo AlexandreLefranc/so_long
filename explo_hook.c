@@ -6,14 +6,14 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 13:42:57 by alefranc          #+#    #+#             */
-/*   Updated: 2022/03/31 13:44:47 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:42:30 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
 #include <stdio.h>
 
-typedef struct	s_vars {
+typedef struct s_vars {
 	void	*mlx;
 	void	*win;
 }				t_vars;

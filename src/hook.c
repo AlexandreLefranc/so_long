@@ -6,14 +6,18 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:13:44 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 15:24:46 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:02:17 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	apply_move(t_all *all, int old_x, int old_y, int x, int y)
+static void	apply_move(t_all *all, int x, int y)
 {
+	int	old_x;
+	int	old_y;
+
+	get_player_pos(all, &old_x, &old_y);
 	mlx_put_image_to_window(all->mlx, all->win, all->player->img,
 		x * SPRITE_SIZE, y * SPRITE_SIZE);
 	mlx_put_image_to_window(all->mlx, all->win, all->floor->img,
@@ -31,9 +35,9 @@ static void	move(t_all *all, int x, int y)
 
 	get_player_pos(all, &p_x, &p_y);
 	if (all->map[p_y + y][p_x + x] == '0')
-		apply_move(all, p_x, p_y, p_x + x, p_y + y);
+		apply_move(all, p_x + x, p_y + y);
 	if (all->map[p_y + y][p_x + x] == 'C')
-		apply_move(all, p_x, p_y, p_x + x, p_y + y);
+		apply_move(all, p_x + x, p_y + y);
 	if (all->map[p_y + y][p_x + x] == 'E' && any_collectible_left(all) == 0)
 	{
 		all->count++;

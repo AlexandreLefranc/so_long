@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:46:39 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 12:30:59 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:33:52 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ static char	*read_file_to_str(char *file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
+	ret = read(fd, buffer, 1023);
+	if (ret <= 0)
+		return (NULL);
 	old_str = ft_strdup("");
 	if (old_str == NULL)
 		return (NULL);
-	ret = read(fd, buffer, 1023);
 	while (ret != 0)
 	{
 		buffer[ret] = '\0';
@@ -62,8 +64,8 @@ char	**parse_input(int argc, char **argv, t_all *all)
 	if (is_ber_file(argv[1]) == 0)
 		print_usage(all);
 	str_map = read_file_to_str(argv[1]);
-	if (str_map == NULL)
-		destroy_all_msg_exit(all, "failed to read file", 1);
+	if (str_map == NULL || str_map[0] == '\0')
+		destroy_all_msg_exit(all, "Error\nInvalid map", 1);
 	all->map = ft_split(str_map, '\n');
 	free(str_map);
 	if (all->map == NULL)

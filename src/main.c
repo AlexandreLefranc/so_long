@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:44:59 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 14:49:46 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:34:28 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,10 @@ int	main(int argc, char **argv)
 	all = init_all();
 	parse_input(argc, argv, all);
 	check_map(all);
-
-	int i = 0;
-	while (all->map[i] != NULL)
-	{
-		printf("%s\n", all->map[i]);
-		i++;
-	}
-
 	create_window(all);
 	create_sprites(all);
 	display_map(all);
-	// hook_quit(all);
 	hook(all);
-	// hook_keys
-
 	mlx_loop(all->mlx);
-	sleep(1);
-	destroy_all(all);
 	return (0);
 }
