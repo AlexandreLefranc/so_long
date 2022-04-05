@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:42:35 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/04 17:48:14 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:01:48 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <fcntl.h>
 
 # include "libft.h"
+# include "ft_printf.h"
 
 # define WALL_F	"./asset/wall64.xpm"
 # define FLOOR_F "./asset/floor64.xpm"
@@ -50,7 +51,7 @@ typedef struct s_all
 }	t_all;
 
 // check_map.c
-void	check_map(char **map);
+void	check_map(t_all *all);
 
 // create_sprites.c
 void	create_sprites(t_all *all);
@@ -60,17 +61,26 @@ void	create_window(t_all *all);
 
 // destroy_all.c
 void	destroy_all(t_all *all);
+void	destroy_all_msg_exit(t_all *all, char *msg, int exit_code);
 
 // display_map.c
 void	display_map(t_all *all);
 
 // error.c
-void	print_usage(void);
+void	print_usage(t_all *all);
 void	msg_free_exit(char *msg, char **map, int exit_code);
 void	msg_free2_exit(char *msg, void	*ptr, int exit_code);
 void	msg_exit(char *msg, int exit_code);
 
+// hook_utils.c
+int		cross(t_all *all);
+void	get_player_pos(t_all *all, int *player_x, int *player_y);
+int		any_collectible_left(t_all *all);
+
+// hook.c
+void	hook(t_all *all);
+
 // parsing.c
-char	**parse_input(int argc, char **argv);
+char	**parse_input(int argc, char **argv, t_all *all);
 
 #endif

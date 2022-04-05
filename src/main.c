@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:44:59 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/04 17:47:42 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 14:49:46 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ int	main(int argc, char **argv)
 	t_all	*all;
 
 	all = init_all();
-	all->map = parse_input(argc, argv);
-	if (all->map == NULL)
-		msg_free2_exit("Couldn't open file", all, 1);
-	check_map(all->map);
+	parse_input(argc, argv, all);
+	check_map(all);
 
 	int i = 0;
 	while (all->map[i] != NULL)
@@ -49,11 +47,11 @@ int	main(int argc, char **argv)
 	create_window(all);
 	create_sprites(all);
 	display_map(all);
-
-	// hook_exits
+	// hook_quit(all);
+	hook(all);
 	// hook_keys
 
-	// mlx_loop(all->mlx);
+	mlx_loop(all->mlx);
 	sleep(1);
 	destroy_all(all);
 	return (0);

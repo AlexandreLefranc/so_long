@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:46:39 by alefranc          #+#    #+#             */
-/*   Updated: 2022/03/31 23:47:39 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 12:30:59 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static char	*read_file_to_str(char *file)
 	if (fd == -1)
 		return (NULL);
 	old_str = ft_strdup("");
+	if (old_str == NULL)
+		return (NULL);
 	ret = read(fd, buffer, 1023);
 	while (ret != 0)
 	{
@@ -49,31 +51,30 @@ static char	*read_file_to_str(char *file)
 	return (str);
 }
 
-char	**parse_input(int argc, char **argv)
+char	**parse_input(int argc, char **argv, t_all *all)
 {
 	char	*str_map;
-	char	**map;
 	int		i;
 	char	*tmp;
 
 	if (argc != 2)
-		print_usage();
+		print_usage(all);
 	if (is_ber_file(argv[1]) == 0)
-		print_usage();
+		print_usage(all);
 	str_map = read_file_to_str(argv[1]);
 	if (str_map == NULL)
-		return (NULL);
-	map = ft_split(str_map, '\n');
+		destroy_all_msg_exit(all, "failed to read file", 1);
+	all->map = ft_split(str_map, '\n');
 	free(str_map);
-	if (map == NULL)
-		return (NULL);
+	if (all->map == NULL)
+		destroy_all_msg_exit(all, "failed to split map", 1);
 	i = 0;
-	while (map[i] != NULL)
+	while (all->map[i] != NULL)
 	{
-		tmp = map[i];
-		map[i] = ft_strtrim(map[i], "	 ");
+		tmp = all->map[i];
+		all->map[i] = ft_strtrim(all->map[i], "	 ");
 		free(tmp);
 		i++;
 	}
-	return (map);
+	return (NULL);
 }

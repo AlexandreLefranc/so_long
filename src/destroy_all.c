@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:57:42 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/04 17:43:08 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/05 11:57:57 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,11 @@ void	destroy_all(t_all *all)
 	destroy_sprites2(all);
 	destroy_mlx(all);
 	free(all);
+}
+
+void	destroy_all_msg_exit(t_all *all, char *msg, int exit_code)
+{
+	ft_putendl_fd(msg, 2);
+	destroy_all(all);
+	exit(exit_code);
 }

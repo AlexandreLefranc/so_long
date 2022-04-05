@@ -6,7 +6,7 @@
 #    By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:00:23 by alefranc          #+#    #+#              #
-#    Updated: 2022/04/04 16:34:22 by alefranc         ###   ########.fr        #
+#    Updated: 2022/04/05 14:59:20 by alefranc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ SRCFILES =	check_map.c \
 			destroy_all.c \
 			display_map.c \
 			error.c \
+			hook_utils.c \
+			hook.c \
 			main.c \
 			parsing.c
 
