@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:13:44 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 17:02:17 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:13:20 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ static void	move(t_all *all, int x, int y)
 
 static int	hook_function(int key, t_all *all)
 {
-	if (key == 65307)
+	if (key == ECHAP_KEY)
 		destroy_all_msg_exit(all, "Bye!", 0);
-	if (key == 97)
+	if (key == LEFT_KEY)
 		move(all, -1, 0);
-	if (key == 100)
+	if (key == RIGHT_KEY)
 		move(all, 1, 0);
-	if (key == 119)
+	if (key == UP_KEY)
 		move(all, 0, -1);
-	if (key == 115)
+	if (key == DOWN_KEY)
 		move(all, 0, 1);
 	return (0);
 }

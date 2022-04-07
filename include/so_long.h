@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:42:35 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/07 15:20:19 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:00:49 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@
 # define EXIT_F "./asset/trampoline.xpm"
 # define COLLECTIBLE_F "./asset/poisson.xpm"
 # define SPRITE_SIZE 64
+
+# define ECHAP_KEY 65307
+# define LEFT_KEY 97
+# define RIGHT_KEY 100
+# define UP_KEY 119
+# define DOWN_KEY 115
 
 typedef struct s_sprite
 {
