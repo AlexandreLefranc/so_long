@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:42:35 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 17:37:56 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:20:19 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	create_sprites(t_all *all);
 void	create_window(t_all *all);
 
 // destroy_all.c
-void	destroy_all(t_all *all);
 void	destroy_all_msg_exit(t_all *all, char *msg, int exit_code);
+void	destroy_all_errmsg_exit(t_all *all, char *msg, int exit_code);
 
 // display_map.c
 void	display_map(t_all *all);

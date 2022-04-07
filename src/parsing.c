@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:46:39 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 16:33:52 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:23:06 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ char	**parse_input(int argc, char **argv, t_all *all)
 		print_usage(all);
 	str_map = read_file_to_str(argv[1]);
 	if (str_map == NULL || str_map[0] == '\0')
-		destroy_all_msg_exit(all, "Error\nInvalid map", 1);
+		destroy_all_errmsg_exit(all, "Error\nInvalid map", 1);
 	all->map = ft_split(str_map, '\n');
 	free(str_map);
 	if (all->map == NULL)
-		destroy_all_msg_exit(all, "failed to split map", 1);
+		destroy_all_errmsg_exit(all, "failed to split map", 1);
 	i = 0;
 	while (all->map[i] != NULL)
 	{

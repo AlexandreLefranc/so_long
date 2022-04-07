@@ -6,7 +6,7 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 19:05:44 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/05 16:51:48 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:21:37 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,16 @@ static void	check_first_middle(t_all *all, int width)
 	while (all->map[0][i] != '\0')
 	{
 		if (all->map[0][i] != '1')
-			destroy_all_msg_exit(all, "Error\nInvalid map", 1);
+			destroy_all_errmsg_exit(all, "Error\nInvalid map", 1);
 		i++;
 	}
 	i = 1;
 	while (all->map[i + 1] != NULL)
 	{
 		if (all->map[i][0] != '1' || all->map[i][width - 1] != '1')
-			destroy_all_msg_exit(all, "Error\nInvalid map", 1);
+			destroy_all_errmsg_exit(all, "Error\nInvalid map", 1);
 		if ((int)ft_strlen(all->map[i]) != width)
-			destroy_all_msg_exit(all, "Error\nInvalid map", 1);
+			destroy_all_errmsg_exit(all, "Error\nInvalid map", 1);
 		i++;
 	}
 }
@@ -87,11 +87,11 @@ static void	check_last(t_all *all, int width)
 		if (all->map[i + 1] == NULL)
 		{
 			if ((int)ft_strlen(all->map[i]) != width)
-				destroy_all_msg_exit(all, "Error\nInvalid map", 1);
+				destroy_all_errmsg_exit(all, "Error\nInvalid map", 1);
 			while (all->map[i][j] != '\0')
 			{
 				if (all->map[i][j] != '1')
-					destroy_all_msg_exit(all, "Error\nInvalid map", 1);
+					destroy_all_errmsg_exit(all, "Error\nInvalid map", 1);
 				j++;
 			}
 		}
