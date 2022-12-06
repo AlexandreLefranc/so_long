@@ -6,14 +6,14 @@
 /*   By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:42:35 by alefranc          #+#    #+#             */
-/*   Updated: 2022/04/07 17:00:49 by alefranc         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:51:03 by alefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <mlx.h>
+# include "../minilibx/mlx.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>

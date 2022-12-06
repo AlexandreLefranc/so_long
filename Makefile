@@ -6,7 +6,7 @@
 #    By: alefranc <alefranc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:00:23 by alefranc          #+#    #+#              #
-#    Updated: 2022/04/05 14:59:20 by alefranc         ###   ########.fr        #
+#    Updated: 2022/12/06 16:52:38 by alefranc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,8 +70,8 @@ HEADER = include/so_long.h
 #              MINILIBX              #
 #------------------------------------#
 
-GMLX = ~/minilibx/libmlx_Linux.a -lXext -lX11 -I ~/minilibx/include/
-INC_MLX = -I ~/minilibx/include/
+GMLX = ./minilibx/libmlx_Linux.a -lXext -lX11 -I ./minilibx/include/
+INC_MLX = -I ./minilibx/include/
 
 #------------------------------------------------------------------------------#
 #                                                                              #
